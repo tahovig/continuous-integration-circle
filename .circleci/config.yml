@@ -52,7 +52,9 @@ jobs:
 
       - run:
           name: run html proofer
-          command: bundle exec htmlproofer --check-html -–allow_hash_href ./_site
+          command: bundle exec htmlproofer ./_site \
+            -–allow_hash_href \
+            --check-html
 
       - run:
           name: notify test is finished
