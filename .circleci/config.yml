@@ -8,3 +8,22 @@ jobs:
     executor: ci-executor
     steps:
       - checkout
+
+      - run:
+          name: remove lock file
+          command: rm Gemfile.lock
+      - run:
+          name: build dependencies
+          command: bundle install
+          
+      - run:
+          name: update GitHub pages
+          command: bundle update github-pages
+
+      - run:
+          name: build the jekyll site
+          command:  bundle exec jekyll build
+
+      - run:
+          name: notify build is finished
+          command: echo "The build is finished!"
