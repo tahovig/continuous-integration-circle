@@ -33,6 +33,10 @@ jobs:
     executor: ci-executor
     steps:
       - checkout
+      
+      - run:
+          name: remove lock file
+          command: rm Gemfile.lock
 
       - run:
           name: build dependencies
