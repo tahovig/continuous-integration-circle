@@ -12,6 +12,7 @@ jobs:
       - run:
           name: remove lock file
           command: rm Gemfile.lock
+          
       - run:
           name: build dependencies
           command: bundle install
