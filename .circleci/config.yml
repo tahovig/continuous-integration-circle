@@ -52,9 +52,7 @@ jobs:
 
       - run:
           name: run html proofer
-          command: bundle exec htmlproofer ./_site \
-            --check-html \
-            --external_only
+          command: bundle exec htmlproofer ./_site --check-html --external_only
 
       - run:
           name: notify test is finished
